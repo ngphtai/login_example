@@ -12,7 +12,7 @@
         @if(session('error'))
             <p class="error">{{ session('error') }}</p>
         @endif
-        <form action="{{ route('register') }}" method="POST">
+        <form action="{{ route('registerAccount') }}" method="POST">
             @csrf
             <label>Use name:</label>
             <input type="name" name="name" required>

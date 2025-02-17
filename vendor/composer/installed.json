@@ -8517,6 +8517,69 @@
             "install-path": "../tijsverkoyen/css-to-inline-styles"
         },
         {
+            "name": "timwassenburg/laravel-service-generator",
+            "version": "v1.0.5",
+            "version_normalized": "1.0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/timwassenburg/laravel-service-generator.git",
+                "reference": "9fcd0e48d418f36c94efcb1917062fa9ea7a0fcc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/timwassenburg/laravel-service-generator/zipball/9fcd0e48d418f36c94efcb1917062fa9ea7a0fcc",
+                "reference": "9fcd0e48d418f36c94efcb1917062fa9ea7a0fcc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10",
+                "nunomaduro/larastan": "^2.0",
+                "orchestra/testbench": "^8.5",
+                "pestphp/pest": "^2.5"
+            },
+            "time": "2023-04-27T09:49:57+00:00",
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "TimWassenburg\\ServiceGenerator\\Http\\Providers\\CommandServiceProvider",
+                        "TimWassenburg\\ServiceGenerator\\ServiceGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "TimWassenburg\\ServiceGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Wassenburg"
+                }
+            ],
+            "description": "Generate Laravel services",
+            "homepage": "https://github.com/timwassenburg/laravel-service-generator",
+            "keywords": [
+                "artisan",
+                "cli",
+                "generator",
+                "laravel",
+                "pattern",
+                "php",
+                "services"
+            ],
+            "support": {
+                "issues": "https://github.com/timwassenburg/laravel-service-generator/issues",
+                "source": "https://github.com/timwassenburg/laravel-service-generator/tree/v1.0.5"
+            },
+            "install-path": "../timwassenburg/laravel-service-generator"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v5.6.1",
             "version_normalized": "5.6.1.0",
@@ -8891,6 +8954,7 @@
         "spatie/ignition",
         "spatie/laravel-ignition",
         "symfony/yaml",
-        "theseer/tokenizer"
+        "theseer/tokenizer",
+        "timwassenburg/laravel-service-generator"
     ]
 }
