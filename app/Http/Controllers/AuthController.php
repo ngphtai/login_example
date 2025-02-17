@@ -59,7 +59,6 @@ class AuthController extends Controller
     {
         $result = $this -> authService -> Login($request);
         if($result){         
-            $request->session()->regenerate();
             toastr()-> success('success',"Login success!");
             return redirect()->route('home');
         }else{
@@ -77,8 +76,7 @@ class AuthController extends Controller
     
         $result=  $this -> authService -> Logout($request);
         if($result){
-            $request->session()->invalidate();
-            $request->session()->regenerateToken();
+           
             toastr()->success('Logout success!');
             return redirect()-> route('login');
         }

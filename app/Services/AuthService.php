@@ -39,7 +39,7 @@
             // $user = User::find(Auth::id());
             // $token = $user->createToken('auth_token')->plainTextToken;
             // return response()->json(['token' => $token, 'user' => $user]);
-            
+            $loginRequest->session()->regenerate();
             return ['status' => true, 'message' => 'Login success!'];
         }
         return ['status' => false, 'message' => 'Email or password is incorrect!'];
@@ -51,7 +51,8 @@
         // $request->user()->tokens()->delete();
         // return response()->json(['message' => 'Logged out']);
         Auth::logout();
-    
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return ['status' => true, 'message' => 'Logout !'];
 
     }
