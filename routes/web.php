@@ -18,10 +18,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [AuthController::class, 'registerAccount'])->name(name: 'registerAccount');
 Route::get('/register', [AuthController::class, 'gotoRegister'])->name(name: 'register_form');
-Route::post('/login', [AuthController::class, 'login'])-> name('login');
+
+Route::post('/login', [AuthController::class, 'login'])
+-> name('login')->middleware('single.session');
+
 Route::get('/login', [AuthController::class, 'gotoLogin'])->name('login_form');
 
-Route::get('/', [AuthController::class, 'homepage'])->name('home');
+Route::get('/', [AuthController::class, 'homepage'])->name('home')-> middleware("single.session");
 
 Route::middleware(['auth.session'])->group(function () {  
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

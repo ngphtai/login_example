@@ -26,7 +26,7 @@ class AuthController extends Controller
         }
         return view('homepage');
     }
-
+    
     public function gotoLogin(){
         return view('loginpage');
     }

@@ -54,6 +54,7 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         ),
         'T' => 
         array (
+            'TimWassenburg\\ServiceGenerator\\' => 31,
             'TijsVerkoyen\\CssToInlineStyles\\' => 31,
             'Tests\\' => 6,
             'Termwind\\' => 9,
@@ -200,6 +201,10 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'TimWassenburg\\ServiceGenerator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/timwassenburg/laravel-service-generator/src',
         ),
         'TijsVerkoyen\\CssToInlineStyles\\' => 
         array (
@@ -554,19 +559,24 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
+        'App\\Http\\Middleware\\AuthenticateSession' => __DIR__ . '/../..' . '/app/Http/Middleware/AuthenticateSession.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
+        'App\\Http\\Middleware\\EnsureSingleSession' => __DIR__ . '/../..' . '/app/Http/Middleware/EnsureSingleSession.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustHosts' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustHosts.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/LoginRequest.php',
+        'App\\Http\\Requests\\RegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/RegisterRequest.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
+        'App\\Services\\AuthService' => __DIR__ . '/../..' . '/app/Services/AuthService.php',
         'Asm89\\Stack\\Cors' => __DIR__ . '/..' . '/asm89/stack-cors/src/Cors.php',
         'Asm89\\Stack\\CorsService' => __DIR__ . '/..' . '/asm89/stack-cors/src/CorsService.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
@@ -6018,6 +6028,11 @@ class ComposerStaticInit65e85f9f959c0b087110331754d451cf
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'TimWassenburg\\ServiceGenerator\\Console\\MakeController' => __DIR__ . '/..' . '/timwassenburg/laravel-service-generator/src/Console/MakeController.php',
+        'TimWassenburg\\ServiceGenerator\\Console\\MakeModel' => __DIR__ . '/..' . '/timwassenburg/laravel-service-generator/src/Console/MakeModel.php',
+        'TimWassenburg\\ServiceGenerator\\Console\\MakeServiceCommand' => __DIR__ . '/..' . '/timwassenburg/laravel-service-generator/src/Console/MakeServiceCommand.php',
+        'TimWassenburg\\ServiceGenerator\\Http\\Providers\\CommandServiceProvider' => __DIR__ . '/..' . '/timwassenburg/laravel-service-generator/src/Http/Providers/CommandServiceProvider.php',
+        'TimWassenburg\\ServiceGenerator\\ServiceGeneratorServiceProvider' => __DIR__ . '/..' . '/timwassenburg/laravel-service-generator/src/ServiceGeneratorServiceProvider.php',
         'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',

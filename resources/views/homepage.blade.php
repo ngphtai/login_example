@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>Hello World</h1>
-        @auth
+        @auth('web')
             <p>Hi, <strong>{{ auth()->user()->name }}</strong></p>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
