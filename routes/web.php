@@ -20,11 +20,11 @@ Route::post('/register', [AuthController::class, 'registerAccount'])->name(name:
 Route::get('/register', [AuthController::class, 'gotoRegister'])->name(name: 'register_form');
 
 Route::post('/login', [AuthController::class, 'login'])
--> name('login')->middleware('single.session');
+-> name('login')->middleware(['single.session']);
 
 Route::get('/login', [AuthController::class, 'gotoLogin'])->name('login_form');
 
-Route::get('/', [AuthController::class, 'homepage'])->name('home')-> middleware("single.session");
+Route::get('/', [AuthController::class, 'homepage'])->name('home')-> middleware("single.session","isAdmin");
 
 Route::middleware(['auth.session'])->group(function () {  
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

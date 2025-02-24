@@ -22,15 +22,13 @@ class EnsureSingleSession
     {
         if(Auth::check()){
             $user = Auth::user();
-            Log::info("Email dang check là : ", ['user' => $user->email]);
-
             $currentSessionId = session()->getId();
-            Log::info("Cb đá thằng trước ra khỏi hệ thống");
+
             if($user->session_id != $currentSessionId){
                 Auth::logout();
                 Session::invalidate();
                 Session::regenerateToken();    
-                Log::info("đã đá thằng trước ra khỏi hệ thống");
+
                 return redirect()->route('login_form')->with('error', 'Bạn đã đăng nhập ở nơi khác.');
             }
         }

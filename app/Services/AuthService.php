@@ -23,9 +23,6 @@ use Illuminate\Support\Facades\Auth;
                 'email' => $data['email'],
                 'password' => Hash::make($data['password']),
             ]);
-            // $token = $user->createToken('auth_token')->plainTextToken;
-            // Log::info('User created: ' .  $token);
-            // return response()->json(['token' => $token, 'user' => $user]);
             Log::info("User created: ", ['user' => $user]);
             return ['status' => true, 'message' => 'Register success!'];
         }catch(Exception $e){
@@ -46,17 +43,10 @@ use Illuminate\Support\Facades\Auth;
             if ($user->session_id && $user->session_id !== $currentSessionId) {
                 Session::getHandler()->destroy($user->session_id);
             }
-            // $user->session_id = $currentSessionId;
+         
             $user1 = User::find($user->id);
-            Log::info("Current session at auth service line 1 is: ", ['user' => $user->session_id]);
             $user1 -> session_id = $currentSessionId;
             $user1 -> save();
-
-            Log::info("Current session at auth service line 2 is: ", ['user' => $user1->session_id]);
-                        
-            // $user = User::find(Auth::id());
-            // $token = $user->createToken('auth_token')->plainTextToken;
-            // return response()->json(['token' => $token, 'user' => $user]);
             
             return ['status' => true, 'message' => 'Login success!'];
         }
@@ -66,9 +56,6 @@ use Illuminate\Support\Facades\Auth;
 
     public function logout(Request $request)
     {       
-        // $request->user()->tokens()->delete();
-        // return response()->json(['message' => 'Logged out']);
-        
         $user = Auth::user();
         $user1 = User::find($user->id);
         $user1 -> session_id = null;
