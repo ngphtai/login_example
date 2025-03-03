@@ -22,7 +22,7 @@ h1, h2 {
     color: #333;
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"], input[type="password"], input[type="name"] {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
@@ -54,4 +54,106 @@ a {
     color: red;
     font-size: 14px;
     margin-bottom: 10px;
+}
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Thiết lập body */
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+}
+
+/* Tiêu đề */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+/* Form tìm kiếm */
+form {
+    margin-bottom: 30px;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Thông báo thành công */
+p[style="color: green;"] {
+    padding: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Danh sách sản phẩm */
+ul {
+    list-style: none;
+    max-width: 600px;
+}
+
+li {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li form {
+    display: flex;
+    align-items: center;
+}
+
+li input[type="text"], li input[type="number"] {
+    width: 150px;
+    margin-right: 10px;
+}
+
+li button[type="submit"] {
+    background-color: #2ecc71;
+}
+
+li button[type="submit"]:hover {
+    background-color: #27ae60;
+}
+
+/* Khi không có kết quả */
+li:empty::before, li:contains("Không tìm thấy") {
+    content: "Không tìm thấy sản phẩm nào.";
+    color: #777;
+    font-style: italic;
 }

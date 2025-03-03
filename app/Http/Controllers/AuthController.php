@@ -58,8 +58,7 @@ class AuthController extends Controller
     {
         $result = $this -> authService -> Login($request);
         if($result){         
-            toastr()-> success('success',"Login success!");
-            return redirect()->route('home');
+            return redirect()->route('home')->with('Success', 'Login Success');;
         }else{
             // return response()->json(['message' => 'Unauthorized'], 401);
             toastr()->error ( 'Email or password is incorrect!');

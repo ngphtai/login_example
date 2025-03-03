@@ -5,10 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Redirect;
 class EnsureSingleSession
 {
     /**
@@ -32,7 +30,6 @@ class EnsureSingleSession
                 return redirect()->route('login_form')->with('error', 'Bạn đã đăng nhập ở nơi khác.');
             }
         }
-        Log::info("ko đá thằng trước ra khỏi hệ thống");
         return $next($request);
     }
 }

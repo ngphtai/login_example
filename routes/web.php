@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,9 +25,13 @@ Route::post('/login', [AuthController::class, 'login'])
 
 Route::get('/login', [AuthController::class, 'gotoLogin'])->name('login_form');
 
-Route::get('/', [AuthController::class, 'homepage'])->name('home')-> middleware("single.session","isAdmin");
+Route::get('/', [AuthController::class, 'homepage'])->name('home')-> middleware("single.session",'check.role:admin');
 
 Route::middleware(['auth.session'])->group(function () {  
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/user', [AuthController::class, 'userInfo']);
+    Route::get('/search/product', [ProductController::class,'index'])->name('search_form');
+    Route::get('/search', [ProductController::class, 'search'])->name('products.search');
+    Route::post('/update/{id}', [ProductController::class, 'update'])->name('products.update');
+   
 });

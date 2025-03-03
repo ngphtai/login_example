@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\IsAdmin;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -55,7 +54,7 @@ class Kernel extends HttpKernel
      * @var array<string, class-string|string>
      */
     protected $routeMiddleware = [
-        'isAdmin' => IsAdmin::class,
+        'check.role' => \App\Http\Middleware\CheckRole::class,
         'single.session' => \App\Http\Middleware\EnsureSingleSession::class,
         'auth.session' => \App\Http\Middleware\AuthenticateSession::class,
         'auth' => \App\Http\Middleware\Authenticate::class,
